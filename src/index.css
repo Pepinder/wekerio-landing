@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Efecto neón para el título */
+.neon-text {
+  text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 40px #9333ea;
+}
+
+/* 🔥 Efecto Glitch */
+@keyframes glitch {
+  0% { text-shadow: 3px 3px #ff00ff, -3px -3px #00ffff; }
+  25% { text-shadow: -3px -3px #ff00ff, 3px 3px #00ffff; }
+  50% { text-shadow: 3px -3px #ff00ff, -3px 3px #00ffff; }
+  75% { text-shadow: -3px 3px #ff00ff, 3px -3px #00ffff; }
+  100% { text-shadow: 3px 3px #ff00ff, -3px -3px #00ffff; }
+}
+
+.glitch-text {
+  animation: glitch 0.4s infinite alternate ease-in-out;
+}
+
+/* 🔥 Flashing Colors en TODO el Fondo flashes blancos mas fuertes*/
+/* 🔥 Flashing Colors más agresivo (estilo interferencia) */
+@keyframes flashing {
+  0% { background-color: #000; }
+  15% { background-color: #0a001a; }  /* Azul oscuro */
+  30% { background-color: #1a001a; }  /* Morado oscuro */
+  45% { background-color: #000; }     /* Negro total */
+  60% { background-color: #1a0010; }  
+  75% { background-color: #000; }
+  85% { background-color: #110011; }  /* Interferencia sutil */
+  100% { background-color: #000; }
+}
+
+/* Aplica el flashing agresivo en todo el fondo */
+html, body {
+  animation: flashing 3s infinite alternate;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* 🔥 Glitch de interferencia repentina */
+@keyframes glitch-interference {
+  0% { transform: none; opacity: 1; filter: none; }
+  5% { transform: skewX(10deg); opacity: 0.8; filter: blur(2px) brightness(1.2); }
+  10% { transform: skewX(-10deg); opacity: 0.9; filter: blur(1px) contrast(1.5); }
+  15% { transform: none; opacity: 1; filter: none; }
+  20% { transform: translateX(5px); opacity: 0.7; filter: blur(3px) grayscale(0.5); }
+  25% { transform: none; opacity: 1; filter: none; }
+  100% { transform: none; opacity: 1; filter: none; }
+}
+
+/* 🔥 Aplica la interferencia cada ciertos segundos */
+.glitch-effect {
+  animation: glitch-interference 5s infinite steps(3, end);
+}
+
+/* 🔥 Efecto Glitch en botones y enlaces de redes sociales */
+@keyframes glitch-hover {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Aplica el glitch al pasar el mouse */
+.glitch-hover:hover {
+  animation: glitch-hover 0.2s infinite;
+  color: #ff00ff;
+}
+
+/* 🔥 Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplica el efecto a la página */
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+
+
